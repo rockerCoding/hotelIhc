@@ -60,9 +60,9 @@ const DetalheQuarto = () => {
 
       <View style={styles.bottom}>
         <Text style={styles.obsText}>* Preços válidos para quarto somente com cama de casal</Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Reserva")}>
           <MaterialIcons name="schedule" size={30} color="white" />
-          <Text style={styles.buttonText}>Reserve já</Text>
+          <Text style={styles.buttonText} >Reserve já</Text>
         </TouchableOpacity>
       </View>
 

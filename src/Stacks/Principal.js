@@ -1,5 +1,5 @@
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
 import { Image, SafeAreaView, Text, View } from 'react-native';
@@ -15,14 +15,14 @@ import HomeStack from './Home';
 import DetalheQuarto from '../Screens/DetalheQuarto';
 import Reserva from '../Screens/Reserva';
 
-const CustomSideBar = () => {
+const CustomSideBar = (props) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.profileContainer}>
 
         <View style={styles.pictureContainer}>
           <View style={styles.pictureProfileContainer}>
-            <IconIon name="person-sharp" size={120} color="#3382C9" />
+            <IconIon name="person-sharp" size={100} color="#3382C9" />
           </View>
         </View>
         <View style={styles.loginContainer}>
@@ -35,7 +35,14 @@ const CustomSideBar = () => {
         </View>
       </View>
       <View style={styles.menuContainer}>
-        <Text>a</Text>
+        <DrawerContentScrollView {...props}>
+          <DrawerItemList {...props} />
+          <DrawerItem
+            label="Help"
+            onPress={() => Linking.openURL('https://mywebsite.com/help')}
+          />
+        </DrawerContentScrollView>
+
       </View>
       <View style={styles.socialMediasContainer}>
         <Text>a</Text>
@@ -67,7 +74,7 @@ const Principal = () => {
     <Drawer.Navigator
       drawerContent={(props) => <CustomSideBar {...props} />}
       /* initialRouteName="DetalheQuarto" */
-      initialRouteName="Reserva"
+      initialRouteName="HomeStack"
       screenOptions={{
         headerRight: () => <HeaderRight />,
         headerTitle: "",
@@ -76,7 +83,7 @@ const Principal = () => {
       <Drawer.Screen name="HomeStack" component={HomeStack} />
       <Drawer.Screen name="DetalheQuarto" component={DetalheQuarto} />
       <Drawer.Screen name="Reserva" component={Reserva} />
-      
+
 
     </Drawer.Navigator>
 

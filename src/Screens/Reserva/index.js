@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, View, Text, Dimensions } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { styles } from "./styles";
 import SelectDropdown from 'react-native-select-dropdown'
+import { useNavigation } from '@react-navigation/native';
 
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { QuartoContext } from "../../Contexts/QuartoContext";
 
 const Example = () => {
   const [isDatePickerVisibleInicio, setDatePickerVisibilityInicio] = useState(false);
@@ -49,8 +52,16 @@ const Example = () => {
   var quantidadesCamasSolteiro = [0, 1, 2, 3]
   const widthSelects = Dimensions.get("screen").width / 3.5
 
+  const { quarto } = useContext(QuartoContext)
+  const navigation = useNavigation()
+
+  const backNav = () => {
+    
+    navigation.goBack()
+  }
+
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: quarto.cor }}>
 
 
       <DateTimePickerModal
@@ -67,13 +78,20 @@ const Example = () => {
         onCancel={hideDatePickerFinal}
 
       />
-      <View style={styles.topContainer}>
-        <Text>Reservas</Text>
+      <View style={styles.titleContainer}>
+        <TouchableOpacity style={styles.backButtonContainer}
+          onPress={() => backNav()}
+        >
+          <MaterialIcons name="arrow-back-ios" size={40} color="white" />
+        </TouchableOpacity>
+        <View style={styles.innerTitleContainer}>
+          <Text style={styles.pageTitleText}>Reserva</Text>
+        </View>
       </View>
       <View style={styles.middleContainer}>
         <TouchableOpacity style={styles.pickerDateContainer} onPress={() => showDatePickerInicio()}>
-          <FontistoIcon name="date" size={30} color="white" />
-          <Text>Data de entrada</Text>
+          <FontistoIcon name="date" size={30} color="#FCAC18" />
+          <Text style={{ color: '#FCAC18' }}>Data de entrada</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.pickerDateContainer, { backgroundColor: '#3382C9' }]} onPress={() => showDatePickerFinal()}>
           <FontistoIcon name="date" size={30} color="white" />
@@ -116,13 +134,15 @@ const Example = () => {
         </View>
 
         <View style={styles.selectionQtdContainer}>
-
+          <Text>Existem 5 quartos disponíveis</Text>
 
         </View>
       </View>
       <View style={styles.bottomContainer}>
-        <Text>{inicio}</Text>
-        <Text>{final}</Text>
+        <TouchableOpacity style={styles.buttonContainer}>
+          <FontistoIcon name="date" size={30} color="white" />
+          <Text>Confirmar</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

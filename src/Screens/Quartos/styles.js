@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  
   innerTitleContainer: {
     borderBottomColor: 'white',
     borderBottomWidth: 1,
@@ -20,14 +21,14 @@ export const styles = StyleSheet.create({
   pageTitleText: {
     textAlign: 'right',
     marginRight: 10,
-    fontWeight: '200',
-    fontSize: 35,
+    fontWeight: '300',
+    fontSize: 25,
     color: 'white'
   },
   titleText: {
     textAlign: 'right',
     
-    fontWeight: '200',
+    fontWeight: '300',
     letterSpacing: 2,
     fontSize: 20
   },

@@ -7,9 +7,6 @@ const QuartoProvider = ({ children }) => {
 
   const [quarto, setQuarto] = useState(null)
 
- 
-  
-
   const chooseTypeRoom = (tipo) => {
     setQuarto(tipo)
   }

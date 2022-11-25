@@ -44,9 +44,9 @@ export const styles = StyleSheet.create({
     backgroundColor: 'blue'
   },
   loginsButtons: {
-    width: Dimensions.get("screen").width * 0.32,
-    height: '100%',
-    padding: 5,
+    width: Dimensions.get("screen").width * 0.30,
+    height: '70%',
+    padding: 2,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 2

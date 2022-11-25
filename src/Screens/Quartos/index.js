@@ -83,8 +83,6 @@ const Quartos = () => {
   }, [quarto])
 
   const Item = ({ item, index }) => {
-    console.log(item)
-
     const isLeft = index % 2 == 0
 
     const start = isLeft ? { x: 0, y: 0 } : { x: 1, y: 0 }
