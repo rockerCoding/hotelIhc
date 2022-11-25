@@ -1,34 +1,64 @@
 import { View, Text, Image, SafeAreaView, Dimensions } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { styles } from './styles'
 import { FlatList, ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { QuartoContext } from '../../Contexts/QuartoContext';
 
 const Quartos = () => {
 
   const opcoes = [
     {
-      nome: 'Suite Standart',
-      cor: '#ccbbee',
-      src: require('../../../assets/Pictures/Quartos/Standart/preview.jpg')
+      tipo: 1,
+      nome: "Suite Standart",
+      fotos: [
+        require('../../../assets/Pictures/Quartos/Standart/000.jpg'),
+        require('../../../assets/Pictures/Quartos/Standart/001.jpg'),
+        require('../../../assets/Pictures/Quartos/Standart/002.jpg'),
+        require('../../../assets/Pictures/Quartos/Standart/003.jpg'),
+        require('../../../assets/Pictures/Quartos/Standart/004.jpg'),
+      ],
+      descricao: "Cama de casal ou até 3 de  Solteiro  •  Televisor Smart TV 43”  •  TV a cabo  •  Workstation  •  Telefone  •  Cofre  •  Acesso Wi-fi à internet banda larga  •  Ar condicionado central  •  Frigobar  •  Secador de cabelo •  Espelho cosmético •  Telefone no banheiro. Alguns apartamentos possuem vista para o prisma do prédio e outros para a cidade, conforme as fotos na galeria acima.",
+      cor: '#48D1CC',
+      preco: 200
     },
     {
-      nome: 'Suite Luxo',
-      cor: '#ffbb1e',
-      src: require('../../../assets/Pictures/Quartos/Luxo/preview.jpg')
+      tipo: 2,
+      nome: "Suite Luxo",
+      fotos: [
+        require('../../../assets/Pictures/Quartos/Luxo/000.jpg'),
+        
+      ],
+      descricao: "Cama de casal • Abundante luz natural • Varanda com vista frontal e lateral para o mar  • Televisor Smart TV 43” • TV a cabo • Workstation • Telefone • Cofre • Acesso à internet banda larga • Ar condicionado central • Frigobar • Maquina de café expresso Illy • Secador de cabelo • Espelho cosmético • Telefone no banheiro.",
+      cor: '#20B2AA',
+      preco: 200
     },
     {
-      nome: 'Bangalo',
-      cor: '#cc33ee',
-      src: require('../../../assets/Pictures/Quartos/Bangalo/preview.jpg')
+      tipo: 3,
+      nome: "Presidencial",
+      fotos: [
+        require('../../../assets/Pictures/Quartos/Presidencial/000.jpg'),
+        
+      ],
+      descricao: "Cama de casal • Abundante luz natural • Acesso exclusivo ao mar  • Televisor Smart TV 43” • TV a cabo • Workstation • Telefone • Cofre • Acesso à internet banda larga • Ar condicionado central • Frigobar • Maquina de café expresso Illy • Secador de cabelo • Espelho cosmético • Telefone no banheiro.",
+      cor: '#008B8B',
+      preco: 200
     },
     {
-      nome: 'Presidencial',
-      cor: '#000000',
-      src: require('../../../assets/Pictures/Quartos/Presidencial/preview.jpg')
-    }
+      tipo: 4,
+      nome: "Bangalô",
+      fotos: [
+        require('../../../assets/Pictures/Quartos/Bangalo/000.jpg'),
+        
+      ],
+      descricao: "uarto com cama de casal • Espaçosa sala de estar loft style • Sala de jantar, reunião ou camarim com banheiro exclusivo • Abundante luz natural • Varanda com vista total para o mar • Televisor Smart TV 43” • Canais de TV a cabo • Workstation • Telefone • Cofre • Acesso à internet banda larga • Ar condicionado central • Frigobar • Máquina de café Nespresso • Secador de cabelo • Banheiro de mármore com luz natural • Banheira de hidromassagem com vista para o mar • Box com chuveiro • Lavabo ",
+      cor: '#008B8B',
+      preco: 200
+    },
+    
+   
   ]
 
   function hexToRgbA(hex, opacity) {
@@ -46,8 +76,14 @@ const Quartos = () => {
 
   const navigation = useNavigation()
   const [heightContainer, setHeightContainer] = useState(0)
+  const { quarto, chooseTypeRoom } = useContext(QuartoContext)
+
+  useEffect(() => {
+    if(quarto != null) navigation.navigate("DetalheQuarto")
+  }, [quarto])
 
   const Item = ({ item, index }) => {
+    console.log(item)
 
     const isLeft = index % 2 == 0
 
@@ -55,12 +91,15 @@ const Quartos = () => {
     const end = isLeft ? { x: 1, y: 0 } : { x: 0, y: 0 }
 
     return (
-      <TouchableOpacity style={[styles.card, { height: heightContainer / opcoes.length }]} >
+      <TouchableOpacity style={[styles.card, { height: heightContainer / opcoes.length }]} 
+        onPress={() => chooseTypeRoom(item)}
+        
+      >
         <View style={[styles.tipoQuartoContainer,
         {
           alignItems: isLeft ? 'flex-end' : 'flex-start',
-          paddingLeft: isLeft ? '20px' : '0px',
-          paddingRight: isLeft ? '0px' : '20px',
+          paddingLeft: isLeft ? 20 : 0,
+          paddingRight: isLeft ? 0 : 20,
 
 
         }]}>
@@ -71,8 +110,8 @@ const Quartos = () => {
               height: heightContainer / 15,
               justifyContent: 'center',
               alignItems: isLeft ? 'flex-end' : 'flex-start',
-              paddingLeft: isLeft ? '0px' : '10px',
-              paddingRight: isLeft ? '10px' : '0px',
+              paddingLeft: isLeft ? 0 : 10,
+              paddingRight: isLeft ? 10 : 0,
             }}
           >
             <Text style={styles.titleText}>
@@ -82,7 +121,7 @@ const Quartos = () => {
         </View>
 
         <Image
-          source={item.src}
+          source={item.fotos[0]}
           style={{ width: '100%', height: '100%' }}
           resizeMode="cover"
         />

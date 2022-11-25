@@ -13,6 +13,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import Quartos from '../Screens/Quartos';
 import HomeStack from './Home';
 import DetalheQuarto from '../Screens/DetalheQuarto';
+import Reserva from '../Screens/Reserva';
 
 const CustomSideBar = () => {
   return (
@@ -50,7 +51,7 @@ const HeaderRight = () => {
       <View style={styles.insideContainer}>
         <Image
           source={require("../../assets/Pictures/lasalle_logo.png")}
-          style={{ width: '100px', height: '90px' }}
+          style={{ width: 100, height: 90 }}
           resizeMode="center"
         />
       </View>
@@ -74,6 +75,7 @@ const Principal = () => {
     >
       <Drawer.Screen name="HomeStack" component={HomeStack} />
       <Drawer.Screen name="DetalheQuarto" component={DetalheQuarto} />
+      <Drawer.Screen name="Reserva" component={Reserva} />
       
 
     </Drawer.Navigator>

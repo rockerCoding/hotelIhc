@@ -5,20 +5,20 @@ export const QuartoContext = createContext();
 
 const QuartoProvider = ({ children }) => {
 
-  const [quarto, setQuarto] = useState(
-    {
-      tipo: 1,
-      nome: "Suite Standart",
-      fotos: "",
-      descricao: "",
-      color: '#ccaacc'
-    }
-  )
+  const [quarto, setQuarto] = useState(null)
+
+ 
+  
+
+  const chooseTypeRoom = (tipo) => {
+    setQuarto(tipo)
+  }
 
   return (
     <QuartoContext.Provider
       value={{
-        quarto, setQuarto
+        quarto, setQuarto,
+        chooseTypeRoom
       }}
     >
       {children}

@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   rightHeaderContainer: {
-    marginRight: '30px',
+    marginRight: 30,
     flex: 1
   },
   insideContainer: {
@@ -46,10 +46,10 @@ export const styles = StyleSheet.create({
   loginsButtons: {
     width: Dimensions.get("screen").width * 0.32,
     height: '100%',
-    padding: '5px',
+    padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: '2px'
+    borderRadius: 2
   },
   loginLogin: {
     backgroundColor: '#FCAC18'
@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
   },
   signIn: {
     backgroundColor: '#3382C9',
-    borderWidth: '0.5px',
+    borderWidth: 0.5,
     borderColor: 'white',
     borderStyle: 'solid'
   }

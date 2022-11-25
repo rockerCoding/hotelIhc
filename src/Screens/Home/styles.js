@@ -19,6 +19,6 @@ export const styles = StyleSheet.create({
   },
   titleText: {
     color: 'white',
-    fontSize: '2rem'
+    fontSize: 20
   }
 })

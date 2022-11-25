@@ -71,12 +71,12 @@ const Servicos = () => {
                     <View 
                       style={[styles.insideContainer, 
                       {
-                        marginLeft: index % 2 == 0 ? '10%' : '0%',
-                        marginRight: index % 2 == 1 ? '10%' : '0%',
+                        marginLeft: index % 2 == 0 ? 30 : 0,
+                        marginRight: index % 2 == 1 ? 10 : 0,
                         backgroundColor: item.color
                       }]}>
                       <View style={[styles.cardTitleContainer, {alignItems: index % 2 == 1 ? 'flex-start' : 'flex-end'}]}>
-                        <Text style={{ color: getContrastYIQ(item.color), fontWeight: 600 }}>{item.nome}</Text>
+                        <Text style={{ color: getContrastYIQ(item.color), fontWeight: '600' }}>{item.nome}</Text>
                       </View>
                       <View style={styles.descricaoContentContainer}>
                         <Text style={[styles.textDescricao, { color: getContrastYIQ(item.color) }]}>{item.descricao}</Text>

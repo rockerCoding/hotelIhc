@@ -4,7 +4,7 @@ const primaryColor = 'white'
 
 export const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get("screen").height * 0.85,
+    height: Dimensions.get("screen").height * 0.8,
 
   },
 
@@ -15,13 +15,13 @@ export const styles = StyleSheet.create({
   },
   titleText: {
     color: primaryColor,
-    fontSize: '2rem',
+    fontSize: 20,
     alignSelf: 'flex-end',
 
   },
   textContainer: {
     width: '60%',
-    marginRight: '20px',
+    marginRight: 20,
     borderBottomColor: primaryColor,
     borderBottomWidth: 1,
     borderStyle: 'solid',
@@ -34,9 +34,9 @@ export const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: 'white',
-    width: '70%',
-    padding: '15px',
-    borderRadius: '15px',
+    width: '80%',
+    padding: 15,
+    borderRadius: 15,
     position: 'absolute',
     shadowColor: "#000",
     shadowOffset: {
@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
     bottom: 20, right: 10,
   },
   cardText: {
-    fontSize: '0.75rem',
+    fontSize: 10,
     textAlign: 'justify'
   }
 

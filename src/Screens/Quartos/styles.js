@@ -19,17 +19,17 @@ export const styles = StyleSheet.create({
   },
   pageTitleText: {
     textAlign: 'right',
-    marginRight:'10px',
-    fontWeight: 200,
-    fontSize: '1.5rem',
+    marginRight: 10,
+    fontWeight: '200',
+    fontSize: 15,
     color: 'white'
   },
   titleText: {
     textAlign: 'right',
     
-    fontWeight: 200,
+    fontWeight: '200',
     letterSpacing: 2,
-    fontSize: '1.5rem'
+    fontSize: 20
   },
 
   contentContainer: {
@@ -60,8 +60,8 @@ export const styles = StyleSheet.create({
   },
   tipoQuartoContainerText: {
     color: 'white',
-    fontSize: '1.3rem',
-    fontWeight: 300,
+    fontSize: 13,
+    fontWeight: '300',
     letterSpacing: 5
   }
 })

@@ -15,13 +15,13 @@ export const styles = StyleSheet.create({
   },
   titleText: {
     color: primaryColor,
-    fontSize: '2rem',
+    fontSize: 20,
     alignSelf: 'flex-end',
 
   },
   textContainer: {
     width: '60%',
-    marginRight: '20px',
+    marginRight: 20,
     borderBottomColor: primaryColor,
     borderBottomWidth: 1,
     borderStyle: 'solid',
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   cardTitleContainer: {
     width: '100%',
-    padding: '2px',
+    padding: 2,
     justifyContent: 'center',
     
   },
@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
 
   },
   textDescricao: {
-    fontSize: '0.7rem',
+    fontSize: 8,
     textAlign: 'justify'
   },
   descricaoContentContainer: {
@@ -71,7 +71,7 @@ export const styles = StyleSheet.create({
   },
   insideContainer: {
     height: '75%',
-    padding: '10px',
+    padding: 10,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

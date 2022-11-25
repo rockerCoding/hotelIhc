@@ -45,8 +45,8 @@ const Acomodacoes = () => {
             <View style={{ flex: 1 }}>
               <Image
                 source={item.src}
-                resizeMode='cover'
-                style={{flex: 1}}
+                resizeMode='contain'
+                style={{width: Dimensions.get("screen").width, flex: 1}}
               />
             </View>
           )}

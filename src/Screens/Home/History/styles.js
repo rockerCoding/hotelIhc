@@ -2,9 +2,9 @@ import { Dimensions, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get("screen").height * 0.85,
+    height: Dimensions.get("screen").height * 0.8,
     backgroundColor: '#FCAC18',
-    padding: '25px'
+    padding: 25
   },
   imageSugarLoaf: {
     width: '90%',
@@ -26,14 +26,14 @@ export const styles = StyleSheet.create({
   titleTextContainer: {
     width: '50%',
     borderBottomColor: 'white',
-    borderBottomWidth: '1px',
+    borderBottomWidth: 1,
     borderStyle: 'solid',
-    marginLeft: '5px',
-    marginTop: '20px'
+    marginLeft: 5,
+    marginTop: 20
   },
   titleText: {
     color: 'white',
-    fontSize: '2rem'
+    fontSize: 20
   }
 
 
