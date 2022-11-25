@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     textAlign: 'right',
     marginRight: 10,
     fontWeight: '200',
-    fontSize: 15,
+    fontSize: 35,
     color: 'white'
   },
   titleText: {

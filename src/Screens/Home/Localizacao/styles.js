@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   titleText: {
     color: primaryColor,
-    fontSize: 20,
+    fontSize: 50,
     alignSelf: 'flex-end',
 
   },

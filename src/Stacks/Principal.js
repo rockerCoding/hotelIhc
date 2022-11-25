@@ -67,7 +67,7 @@ const Principal = () => {
     <Drawer.Navigator
       drawerContent={(props) => <CustomSideBar {...props} />}
       /* initialRouteName="DetalheQuarto" */
-      initialRouteName="HomeStack"
+      initialRouteName="Reserva"
       screenOptions={{
         headerRight: () => <HeaderRight />,
         headerTitle: "",

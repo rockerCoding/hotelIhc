@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
   },
   titleText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 50,
     alignSelf: 'flex-end'
   },
   contentText: {
